@@ -14,6 +14,8 @@
 		8BDBB1DF1F4FC0F80086CC69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BDBB1DD1F4FC0F80086CC69 /* LaunchScreen.storyboard */; };
 		8BDBB1EA1F4FC0F80086CC69 /* TableViewProgrammaticallySwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBB1E91F4FC0F80086CC69 /* TableViewProgrammaticallySwiftTests.swift */; };
 		8BDBB1F51F4FC0F80086CC69 /* TableViewProgrammaticallySwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBB1F41F4FC0F80086CC69 /* TableViewProgrammaticallySwiftUITests.swift */; };
+		8BDBB2031F4FC55E0086CC69 /* TableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBB2021F4FC55E0086CC69 /* TableViewModel.swift */; };
+		8BDBB2051F4FC77C0086CC69 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BDBB2041F4FC77C0086CC69 /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		8BDBB1F01F4FC0F80086CC69 /* TableViewProgrammaticallySwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TableViewProgrammaticallySwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BDBB1F41F4FC0F80086CC69 /* TableViewProgrammaticallySwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewProgrammaticallySwiftUITests.swift; sourceTree = "<group>"; };
 		8BDBB1F61F4FC0F80086CC69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8BDBB2021F4FC55E0086CC69 /* TableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewModel.swift; sourceTree = "<group>"; };
+		8BDBB2041F4FC77C0086CC69 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			children = (
 				8BDBB1D41F4FC0F80086CC69 /* AppDelegate.swift */,
 				8BDBB1D61F4FC0F80086CC69 /* ViewController.swift */,
+				8BDBB2041F4FC77C0086CC69 /* TableViewCell.swift */,
+				8BDBB2021F4FC55E0086CC69 /* TableViewModel.swift */,
 				8BDBB1D81F4FC0F80086CC69 /* Main.storyboard */,
 				8BDBB1DB1F4FC0F80086CC69 /* Assets.xcassets */,
 				8BDBB1DD1F4FC0F80086CC69 /* LaunchScreen.storyboard */,
@@ -256,6 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8BDBB2031F4FC55E0086CC69 /* TableViewModel.swift in Sources */,
+				8BDBB2051F4FC77C0086CC69 /* TableViewCell.swift in Sources */,
 				8BDBB1D71F4FC0F80086CC69 /* ViewController.swift in Sources */,
 				8BDBB1D51F4FC0F80086CC69 /* AppDelegate.swift in Sources */,
 			);
