@@ -9,25 +9,27 @@
 import UIKit
 
 protocol TableViewModelProtocol {
-    var dataBackArray:[TableCellViewModelProtocol] { get }
+    var dataBackArray:DataBinder<[TableCellViewModelProtocol]> { get }
 }
 
 let kTableViewCell = "TableViewCell"
 
 class ViewController: UIViewController {
     
-    fileprivate var tableView:UITableView!
     var viewModel:TableViewModelProtocol!
     
+    fileprivate var tableView:UITableView!
     fileprivate var dataBackArray:[TableCellViewModelProtocol]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.        
         tableView = self.setupTableView(self)
+        viewModel.dataBackArray.bind { [unowned self] (cellViewModels) in
+            self.dataBackArray = cellViewModels
+            self.tableView.reloadData()
+        }
         
-        dataBackArray = viewModel.dataBackArray
-        tableView.reloadData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,6 +46,7 @@ extension ViewController {
         var tableView = UITableView(frame: controller.view.bounds, style: .plain)
         controller.view.addSubview(tableView)
         
+        //Full Window Constraints
         let topConstraint = tableView.topAnchor.constraint(equalTo: controller.view.topAnchor)
         let leftConstraint = tableView.leadingAnchor.constraint(equalTo: controller.view.leadingAnchor)
         let bottomConstraint = tableView.bottomAnchor.constraint(equalTo: controller.view.bottomAnchor)
@@ -61,6 +64,7 @@ extension ViewController {
 }
 
 extension ViewController: UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return dataBackArray.count
     }

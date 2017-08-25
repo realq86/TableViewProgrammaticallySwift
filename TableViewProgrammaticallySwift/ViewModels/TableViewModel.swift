@@ -10,20 +10,25 @@ import Foundation
 
 class TableViewModel: TableViewModelProtocol {
     
-    var dataBackArray: [TableCellViewModelProtocol]
+    var dataBackArray: DataBinder<[TableCellViewModelProtocol]>
     var models: [Model]! {
         didSet {
-            self.dataBackArray.removeAll()
+            
+            var tempArray = [TableCellViewModel]()
             for model in models {
-                self.dataBackArray.append(TableCellViewModel(model: model))
+                tempArray.append(TableCellViewModel(model: model))
             }
+            
+            dataBackArray.value = tempArray
         }
     }
     
-    init(models: [Model]) {
-        self.dataBackArray = [TableCellViewModelProtocol]()
+    init(models: [Model]?) {
+        self.dataBackArray = DataBinder(value: [TableCellViewModel]())
         
-        setModel(models)
+        if let models = models {
+            setModel(models)
+        }
     }
     
     func setModel(_ models: [Model]) {
