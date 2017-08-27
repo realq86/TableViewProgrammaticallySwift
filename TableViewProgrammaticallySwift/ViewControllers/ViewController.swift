@@ -43,7 +43,7 @@ extension ViewController {
     
     func setupTableView(_ controller:ViewController)->UITableView {
         
-        var tableView = UITableView(frame: controller.view.bounds, style: .plain)
+        let tableView = UITableView(frame: controller.view.bounds, style: .plain)
         controller.view.addSubview(tableView)
         
         //Full Window Constraints
